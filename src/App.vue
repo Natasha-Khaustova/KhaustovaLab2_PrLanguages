@@ -59,21 +59,7 @@ export default {
     };
   },
   methods: {
-    async copyPassword(password) {
-      try {
-        const { ip, userAgent, headers } = this.getAdditionalUserInfo();
-        const response = await axios.post('http://localhost:5000/savePassword', {
-          ip,
-          userAgent,
-          headers,
-          password: password.password,
-        });
-
-        console.log(response.data.message);
-      } catch (error) {
-        console.error('Error saving password:', error);
-      }
-
+    copyPassword(password) {
       console.log('Password copied to clipboard:', password.password);
       password.copied = true;
     },
@@ -88,7 +74,7 @@ export default {
     },
 
 
-    generatePassword() {
+    async generatePassword() {
       const characters = {
         numbers: '0123456789',
         uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -117,6 +103,20 @@ export default {
       }
 
       this.generatedPasswords = passwords;
+
+    try {
+        const { ip, userAgent, headers } = this.getAdditionalUserInfo();
+        const response = await axios.post('http://localhost:5000/savePasswords', {
+          ip,
+          userAgent,
+          headers,
+          passwords: this.generatedPasswords.map(passwordObj => passwordObj.password),
+        });
+
+        console.log(response.data.message);
+      } catch (error) {
+        console.error('Error saving passwords:', error);
+      }
     },
   },
 };
