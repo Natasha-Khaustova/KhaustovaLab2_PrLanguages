@@ -1,29 +1,21 @@
 # KhaustovaLab2
 
-This template should help get you started developing with Vue 3 in Vite.
+Описание запуска программы
 
-## Recommended IDE Setup
+## Стек технологий
+Программа создана на фреймворке Vue.js
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Backend
+Сервер написан на Express - Node.js web application framework. Находится в файле server.js.
+Для запуска: команда node server.js
 
-## Customize configuration
+## Frontend
+Основная программа хранится по пути src в файле App.vue
+Для запуска: команда npm run dev
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Данные пользователя и пароли
+Сгенерированные пароли сохраняются на стороне backend так же, как и данные пользователя. Все сохраненные пароли лежат в файле passwords.json вместе с данными о пользователе.
 
-## Project Setup
+![KhaustovaLab2_Page](https://github.com/Natasha-Khaustova/KhaustovaLab2_PrLanguages/assets/45619280/3ac7eb22-75d6-4e26-8d3b-1791767f98f1)
 
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+![KhaustovaLab2_Passwords](https://github.com/Natasha-Khaustova/KhaustovaLab2_PrLanguages/assets/45619280/47bd0716-96da-453f-85f3-e9bf39af4166)
